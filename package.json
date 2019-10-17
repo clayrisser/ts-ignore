@@ -1,6 +1,6 @@
 {
   "name": "ts-ignore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ignore typescript errors",
   "keywords": [
     "git"
@@ -18,7 +18,8 @@
   },
   "files": [
     "bin.js",
-    "lib"
+    "lib",
+    "oclif.manifest.json"
   ],
   "main": "lib/index.js",
   "bin": {
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "babel": "babel-node --extensions \".ts,.tsx\"",
-    "build": "npm run test && babel src -d lib --extensions \".ts,.tsx\" --source-maps inline && tsc -d --emitDeclarationOnly",
+    "build": "npm run test && babel src -d lib --extensions \".ts,.tsx\" --source-maps inline && tsc -d --emitDeclarationOnly && oclif-dev manifest",
     "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/* && jest --clearCache",
     "clean:purge": "jest --clearCache && git clean -fXd",
     "format": "prettier --write ./**/*.{json,md,scss,yaml,yml,js,jsx,ts,tsx} --ignore-path .gitignore",
@@ -43,7 +44,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.13.3",
     "@oclif/errors": "^1.2.2",
+    "@oclif/plugin-help": "^2.2.1",
+    "@oclif/plugin-legacy": "^1.1.4",
     "@types/split": "^1.0.0",
     "bluebird": "^3.7.1",
     "core-js": "^3.3.2",
@@ -51,6 +55,7 @@
     "fs-extra": "^8.1.0",
     "ora": "^4.0.2",
     "pkg-dir": "^4.2.0",
+    "ts-node": "^8.4.1",
     "ts-optchain.macro": "^1.1.5"
   },
   "devDependencies": {
@@ -59,6 +64,7 @@
     "@babel/node": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
+    "@oclif/dev-cli": "^1.22.2",
     "@types/bluebird": "^3.5.28",
     "@types/core-js": "^2.5.2",
     "@types/fs-extra": "^8.0.1",

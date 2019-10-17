@@ -80,3 +80,4 @@ tsconfig.tsbuildinfo
 .tmp
 lib
 .gitsyncallrc
+oclif.manifest.json
