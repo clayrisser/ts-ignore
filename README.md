@@ -2,6 +2,8 @@
 
 > ignore typescript errors
 
+![](assets/ts-ignore.png)
+
 ## Installation
 
 ```
